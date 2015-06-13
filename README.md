@@ -14,7 +14,7 @@ Select this option.
 
 4. In the file that is opened up copy and paste the .gs file within provided in this repo.
 
-5. Once this is done, open a new HTML file from the file tab above and copy and paste the .HTM file within provided by this repo. NAME THIS FILE --> Sidebar.html 
+5. Once this is done, open a new HTML file from the file tab above and copy and paste the .html file within provided by this repo. NAME THIS FILE --> Sidebar.html.
 
 6. Next save the project as whatever you please.
 
@@ -22,11 +22,11 @@ Select this option.
 1. Return to your original document that has the table.
 
 2. Navigate to the tab called ```Add-ons``` where you should see the name (which you chose) of the add-on.
-Hover over it and select start.
+Hover over it and select start. (If you do not see this refresh the page).
 
 3. Once this is done the add-on will appear as a side-bar, with a default column size of 2.
 
-4. Select your table (that means highlight the whole thing as you would any text and press the translate button
+4. Select your table (that means highlight the whole thing as you would any text) and press the translate button
 in the add-on side-bar. The HTML should now appear in the text-area.
 
 ##Behavior
