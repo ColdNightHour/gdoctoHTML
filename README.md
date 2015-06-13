@@ -2,7 +2,7 @@
 A simple add-on for google-docs that allows the user to make a selected google-doc table into an HTML table. 
 
 ##To ''Install''
-Since it is not yet published you must paste the code in a google doc script editor.
+Since it is not yet published (which I am working on) you must paste the code in a google doc script editor. 
 Follow the below instructions.
 
 1. Create a new google doc, and create a table.
@@ -24,7 +24,7 @@ Select this option.
 2. Navigate to the tab called ```Add-ons``` where you should see the name (which you chose) of the add-on.
 Hover over it and select start.
 
-3. Once this is done the add-on will appear as a side-bar, which a default column size of 2.
+3. Once this is done the add-on will appear as a side-bar, with a default column size of 2.
 
-4. Select your table (that means highlight the whole thing as you would any text) and press translate 
-in the add-on side-bar. The HTML will now appear.
+4. Select your table (that means highlight the whole thing as you would any text and press the translate button
+in the add-on side-bar. The HTML should now appear in the text-area.
