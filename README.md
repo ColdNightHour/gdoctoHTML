@@ -28,3 +28,6 @@ Hover over it and select start.
 
 4. Select your table (that means highlight the whole thing as you would any text and press the translate button
 in the add-on side-bar. The HTML should now appear in the text-area.
+
+##Behavior
+In order for the add-on to work the table must be populated uniformly. This means that if you have a 4x4 table, each row must contain at least one thing in a cell.
