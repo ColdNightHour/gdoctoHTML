@@ -1,4 +1,4 @@
-# Table2Table
+# gdoc to HTML
 A simple add-on for google-docs that allows the user to make a selected google-doc table into an HTML table. 
 
 ##To ''Install''
