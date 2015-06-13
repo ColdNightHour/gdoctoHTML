@@ -20,4 +20,12 @@ within file provided by this repo.
 6. Next save the project as whatever you please.
 
 ##To use
-1. 
+1. Return to your original document that has the table.
+
+2. Navigate to the tab called ```Add-ons``` where you should see the name (which you chose) of the add-on.
+Hover over it and select start.
+
+3. Once this is done the add-on will appear as a side-bar, which a default column size of 2.
+
+4. Select your table (that means highlight the whole thing as you would any text) and press translate 
+in the add-on side-bar. The HTML will now appear.
