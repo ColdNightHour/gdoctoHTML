@@ -14,7 +14,7 @@ Select this option.
 
 4. In the file that is opened up copy and paste the .gs file within provided in this repo.
 
-5. Once this is done, open a new HTML file from the file tab above and copy and paste the .HTM file within provided by this repo.
+5. Once this is done, open a new HTML file from the file tab above and copy and paste the .HTM file within provided by this repo. NAME THIS FILE --> Sidebar.html 
 
 6. Next save the project as whatever you please.
 
