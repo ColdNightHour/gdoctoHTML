@@ -1,0 +1,132 @@
+<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+<!-- The CSS package above applies Google styling to buttons and other elements. -->
+
+<style>
+.branding-below {
+  bottom: 56px;
+  top: 0;
+}
+
+.branding-text {
+  left: 7px;
+  position: relative;
+  top: 3px;
+}
+
+.col-contain {
+  overflow: hidden;
+}
+
+.col-one {
+  float: left;
+  width: 50%;
+}
+
+.logo {
+  vertical-align: middle;
+}
+
+.radio-spacer {
+  height: 20px;
+}
+
+.width-100 {
+  width: 100%;
+}
+</style>
+
+<div class="sidebar branding-below">
+  <form>
+    <div class="block col-contain">
+      <div class="col-one">
+        <b>Columns</b>
+        <div>
+          <input type="radio" name="numCol" value="1">
+          <label for="radio-numCol-auto">1</label>
+        </div>
+        <div>
+          <input type="radio" name="numCol" value="2" checked>
+          <label for="radio-numCol-en">2</label>
+        </div>
+        <div>
+          <input type="radio" name="numCol" value="3">
+          <label for="radio-numCol-fr">3</label>
+        </div>
+        <div>
+          <input type="radio" name="numCol" value="4">
+          <label for="radio-numCol-de">4</label>
+        </div>
+        <div>
+          <input type="radio" name="numCol" value="5">
+          <label for="radio-numCol-ja">5</label>
+        </div>
+        <div>
+          <input type="radio" name="numCol" value="6">
+          <label for="radio-numCol-es">6</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="block form-group">
+      <label for="translated-text"><b>HTML</b></label>
+      <textarea class="width-100" id="translated-text" rows="10" font-size='8px'></textarea>
+    </div>
+    <div class="block" id="button-bar">
+      <button class="blue" id="run-translation">Translate</button>
+    </div>
+  </form>
+</div>
+
+<div class="sidebar bottom">
+  <img alt="Add-on logo" class="logo" width="27" height="27"
+      src="https://googledrive.com/host/0B0G1UdyJGrY6XzdjQWF4a1JYY1k/translate-logo-small.png">
+  <span class="gray branding-text">gdoc to HTML</span>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+<script>
+  /**
+   * On document load, assign click handlers to each button and try to load the
+   * user's numCol and destination language preferences if previously set.
+   */
+  $(function() {
+    $('#run-translation').click(toHTML);
+    google.script.run.withSuccessHandler(loadPreferences)
+        .withFailureHandler(showError).getPreferences();
+  });
+/**
+Calls a function that converts a selected gdoc table to an HTML tables using a 
+gdoc api function that parses selected text
+@param numCol corresponds to the number of columns.
+*/
+  
+  function toHTML() {
+    var numCol = $('input[name=numCol]:checked').val();
+    this.disabled = true;
+    $('#error').remove();
+    google.script.run
+        .withSuccessHandler(
+          function(translatedText, element) {
+            $('#translated-text').val(translatedText);
+            element.disabled = false;
+          })
+        .withFailureHandler(
+          function(msg, element) {
+            showError(msg, $('#button-bar'));
+            element.disabled = false;
+          })
+        .withUserObject(this)
+        .translateHTML(numCol);
+   }
+  /**
+   * Inserts a div that contains an error message after a given element.
+   *
+   * @param msg The error message to display.
+   * @param element The element after which to display the error.
+   */
+  function showError(msg, element) {
+    var div = $('<div id="error" class="error">' + msg + '</div>');
+    $(element).after(div);
+  }
+</script>
