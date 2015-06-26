@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+function allowDrop(ev) {
+	ev.preventDefault();
+}
+
+function drag(ev) {
+	ev.dataTransfer.setData("t", ev.target.id);
+}
+
+function drop(ev) {
+	ev.preventDefault();
+	var data = ev.dataTransfer.getData("t");
+//	var old = document.getElementById(data);
+//	ev.target.parentNode.insertBefore(ev.target, old);
+//	ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<p>Drag test</p><br />
+
+<table border="1" cellpadding="1">
+<tbody>
+	<tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<td id="1" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">aaaaaa</td>
+		<td id="2" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">bbbbbb</td>
+	</tr>
+	<tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<td id="3" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">cccccc</td>
+		<td id="4" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">dddddd</td>
+	</tr>
+	<tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<td id="3" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">eeeeee</td>
+		<td id="4" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">ffffff</td>
+	</tr>
+
+</tbody>
+</table>
+
+<p id="this" draggable="true" ondragstart="drag(event)">Drag this</p>
+
+</body>
+</html>
