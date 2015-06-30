@@ -2,40 +2,57 @@
 <html>
 <head>
 <script>
-function allowDrop(ev) {
-	ev.preventDefault();
-}
-
-function drag(ev) {
-	ev.dataTransfer.setData("t", ev.target.id);
-}
-
-function drop(ev) {
-	ev.preventDefault();
-	var data = ev.dataTransfer.getData("t");
-        var old = document.getElementById(data);
-	var children = old.parentNode.childNodes;
-	var chldArray = [];
-	for(var i = 0; i < children.length; i++) {
-		if(i % 2 == 1) 
-			chldArray.push(children[i]);
+	function allowDrop(ev) {
+		ev.preventDefault();
 	}
-	console.log(chldArray[0]);
-	console.log(chldArray[1]);
-	console.log(chldArray.length);
-	if(chldArray[0] == ev.target)
-		console.log("Works");
-	for(var i = 0; i < chldArray.length - 1; i++) {
-		if(chldArray[i].isEqualNode(old) && chldArray[i + 1].isEqualNode(ev.target)) {
-			console.log("first");
-			ev.target.parentNode.insertBefore(ev.target, old);
-		}
-		else if(chldArray[i].isEqualNode(ev.target) && chldArray[i + 1].isEqualNode(old)) {
-			console.log("second");
-			old.parentNode.insertBefore(old, ev.target);
-		}
+
+	function drag(ev) {
+		ev.dataTransfer.setData("t", ev.target.id);
 	}
-}
+
+	function drop(ev) {
+		ev.preventDefault();
+		var data = ev.dataTransfer.getData("t");
+        	var old = document.getElementById(data);
+		var children = old.parentNode.childNodes;i
+		/*
+		var chldArray = [];
+		for(var i = 0; i < children.length; i++) {
+			if(i % 2 == 1) 
+				chldArray.push(children[i]);
+		} 
+		*/
+		console.log(children[0]);
+		console.log(children[1]);
+		console.log(children[2]);
+		console.log(children[3]);
+		console.log(children[4]);
+		console.log(chldArray.length);
+		/*
+		for(var i = 0; i < chldArray.length - 1; i++) {
+			if(chldArray[i].isEqualNode(old) && chldArray[i + 1].isEqualNode(ev.target)) {
+				console.log("first");
+				ev.target.parentNode.insertBefore(ev.target, old);
+				ev.targe.parentNode.insertBefore(children
+			}
+			else if(chldArray[i].isEqualNode(ev.target) && chldArray[i + 1].isEqualNode(old)) {
+				console.log("second");
+				old.parentNode.insertBefore(old, ev.target);
+			}
+		}
+		*/
+		for(var i = 1; i < children.length - 2; i++) {
+			if(child[i].isEqualNode(old) && children[i + 2].isEqualNode(ev.target)) {
+				console.log("first");
+				ev.target.parentNode.insertBefore(ev.target, old);
+			}
+			else if(child[i].isEqualNode(ev.target) && children[i + 2].isEqualNode(old)) {
+				console.log("second");
+				old.parentNode.insertBefore(old, ev.target);
+			}
+		}	
+
+	}	
 
 </script>
 </head>
