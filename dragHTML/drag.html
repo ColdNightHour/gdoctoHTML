@@ -13,10 +13,35 @@ function drag(ev) {
 function drop(ev) {
 	ev.preventDefault();
 	var data = ev.dataTransfer.getData("t");
-//	var old = document.getElementById(data);
-//	ev.target.parentNode.insertBefore(ev.target, old);
-//	ev.target.appendChild(document.getElementById(data));
+        var old = document.getElementById(data);
+	var children = old.parentNode.childNodes;
+	var chldArray = [];
+	for(var i = 0; i < children.length; i++) {
+		if(i % 2 == 1) 
+			chldArray.push(children[i]);
+	}
+	console.log(chldArray[0]);
+	console.log(chldArray[1]);
+	console.log(chldArray.length);
+	if(chldArray[0] == ev.target)
+		console.log("Works");
+	/*
+	for(var i = 1; i < children.length - 2; i++) {
+		if(children[i].isEqualNode(old) && children[i + 2].isEqualNode(ev.target)) {
+			console.log("first");
+			ev.target.parentNode.insertBefore(ev.target, old);
+			break;
+
+		}
+		else if(children[i].isEqualNode(ev.target) && children[i + 2].isEqualNode(old)) {
+			console.log("second");
+			old.parentNode.insertBefore(old, ev.target);
+			break;
+		}
+	}
+	*/
 }
+
 </script>
 </head>
 <body>
@@ -25,23 +50,21 @@ function drop(ev) {
 
 <table border="1" cellpadding="1">
 <tbody>
-	<tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td id="1" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">aaaaaa</td>
+	<tr id="a" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<td id="1" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">aaaaaa</td>	
 		<td id="2" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">bbbbbb</td>
 	</tr>
-	<tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+	<tr id="b" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
 		<td id="3" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">cccccc</td>
 		<td id="4" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">dddddd</td>
 	</tr>
-	<tr draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
-		<td id="3" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">eeeeee</td>
-		<td id="4" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">ffffff</td>
+	<tr id="c" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<td id="5" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">eeeeee</td>
+		<td id="6" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">ffffff</td>
 	</tr>
 
 </tbody>
 </table>
-
-<p id="this" draggable="true" ondragstart="drag(event)">Drag this</p>
 
 </body>
 </html>
