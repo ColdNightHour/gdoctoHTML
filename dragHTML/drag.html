@@ -25,21 +25,16 @@ function drop(ev) {
 	console.log(chldArray.length);
 	if(chldArray[0] == ev.target)
 		console.log("Works");
-	/*
-	for(var i = 1; i < children.length - 2; i++) {
-		if(children[i].isEqualNode(old) && children[i + 2].isEqualNode(ev.target)) {
+	for(var i = 0; i < chldArray.length - 1; i++) {
+		if(chldArray[i].isEqualNode(old) && chldArray[i + 1].isEqualNode(ev.target)) {
 			console.log("first");
 			ev.target.parentNode.insertBefore(ev.target, old);
-			break;
-
 		}
-		else if(children[i].isEqualNode(ev.target) && children[i + 2].isEqualNode(old)) {
+		else if(chldArray[i].isEqualNode(ev.target) && chldArray[i + 1].isEqualNode(old)) {
 			console.log("second");
 			old.parentNode.insertBefore(old, ev.target);
-			break;
 		}
 	}
-	*/
 }
 
 </script>
