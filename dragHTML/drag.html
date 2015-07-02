@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<!-- start -->
 <script>
 	function allowDrop(ev) {
 		ev.preventDefault();
@@ -14,7 +15,7 @@
 		ev.preventDefault();
 		var data = ev.dataTransfer.getData("t");
         	var old = document.getElementById(data);
-		var children = old.parentNode.childNodes;i
+		var children = old.parentNode.childNodes;
 		/*
 		var chldArray = [];
 		for(var i = 0; i < children.length; i++) {
@@ -22,36 +23,34 @@
 				chldArray.push(children[i]);
 		} 
 		*/
-		console.log(children[0]);
-		console.log(children[1]);
-		console.log(children[2]);
-		console.log(children[3]);
-		console.log(children[4]);
-		console.log(chldArray.length);
 		/*
 		for(var i = 0; i < chldArray.length - 1; i++) {
 			if(chldArray[i].isEqualNode(old) && chldArray[i + 1].isEqualNode(ev.target)) {
 				console.log("first");
 				ev.target.parentNode.insertBefore(ev.target, old);
-				ev.targe.parentNode.insertBefore(children
 			}
 			else if(chldArray[i].isEqualNode(ev.target) && chldArray[i + 1].isEqualNode(old)) {
 				console.log("second");
 				old.parentNode.insertBefore(old, ev.target);
 			}
 		}
-		*/
+		*/	
+		console.log(children[0]);
+		console.log(children[1]);
+		console.log(children[2]);
+		console.log(children[3]);
+		console.log(children[4]);
 		for(var i = 1; i < children.length - 2; i++) {
-			if(child[i].isEqualNode(old) && children[i + 2].isEqualNode(ev.target)) {
+			if(children[i].isEqualNode(old) && children[i + 2].isEqualNode(ev.target)) {
 				console.log("first");
-				ev.target.parentNode.insertBefore(ev.target, old);
+				ev.target.parentNode.insertBefore(children[i + 2], chilren[i]);
+
 			}
-			else if(child[i].isEqualNode(ev.target) && children[i + 2].isEqualNode(old)) {
+			else if(children[i].isEqualNode(ev.target) && children[i + 2].isEqualNode(old)) {
 				console.log("second");
-				old.parentNode.insertBefore(old, ev.target);
+				old.parentNode.insertBefore(children[i + 2], children[i]);
 			}
 		}	
-
 	}	
 
 </script>
@@ -62,9 +61,9 @@
 
 <table border="1" cellpadding="1">
 <tbody>
-	<tr id="a" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
+	<tr id="a" draggable="true" ondragstart="drag(event)" ondragover="allowDrop(event)">
 		<td id="1" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">aaaaaa</td>	
-		<td id="2" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">bbbbbb</td>
+		<td id="2" draggable="true" ondragstart="drag(event)"  ondragover="allowDrop(event)">bbbbbb</td>
 	</tr>
 	<tr id="b" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">
 		<td id="3" draggable="true" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)">cccccc</td>
